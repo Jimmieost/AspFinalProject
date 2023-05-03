@@ -1,15 +1,25 @@
 using Microsoft.EntityFrameworkCore;
 using AspFinalProject.Models.Contexts;
 using Microsoft.EntityFrameworkCore.Query.Internal;
+using Microsoft.AspNetCore.Identity;
+using AspFinalProject.Models.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<IdentityContext>(x => x.UseSqlServer(""));
+builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlLocalDb")));
 
-
-
+// Add and configure Identity
+builder.Services.AddIdentity<AccountEntity, IdentityRole>(x =>
+{
+    x.SignIn.RequireConfirmedAccount = false;
+    x.User.RequireUniqueEmail = true;
+    x.Password.RequireUppercase = false;
+    x.Password.RequireNonAlphanumeric = false;
+    x.Password.RequireDigit = false;
+    x.Password.RequiredLength = 6;
+}).AddEntityFrameworkStores<AppDbContext>();
 
 
 
@@ -17,15 +27,11 @@ builder.Services.AddDbContext<IdentityContext>(x => x.UseSqlServer(""));
 
 //Den här ska ligga sist i listan för att undvika error.
 var app = builder.Build();
-
 app.UseHsts();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
