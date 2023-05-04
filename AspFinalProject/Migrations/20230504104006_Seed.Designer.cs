@@ -4,6 +4,7 @@ using AspFinalProject.Models.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AspFinalProject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230504104006_Seed")]
+    partial class Seed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -348,13 +351,13 @@ namespace AspFinalProject.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "291c298d-5402-417a-a531-770bc0735b66",
+                            Id = "7f8fbaed-9dcd-4fbc-8ec4-87396e465358",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "1fcbf457-3dd9-492a-b7ab-789c89afcf1f",
+                            Id = "1dd47938-e7a4-4acb-a207-021ac1d9f54d",
                             Name = "customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -488,148 +491,13 @@ namespace AspFinalProject.Migrations
                         },
                         new
                         {
-                            CategoriesId = 1,
+                            CategoriesId = 2,
+                            ProductsId = 1
+                        },
+                        new
+                        {
+                            CategoriesId = 3,
                             ProductsId = 2
-                        },
-                        new
-                        {
-                            CategoriesId = 1,
-                            ProductsId = 3
-                        },
-                        new
-                        {
-                            CategoriesId = 1,
-                            ProductsId = 4
-                        },
-                        new
-                        {
-                            CategoriesId = 1,
-                            ProductsId = 5
-                        },
-                        new
-                        {
-                            CategoriesId = 1,
-                            ProductsId = 6
-                        },
-                        new
-                        {
-                            CategoriesId = 1,
-                            ProductsId = 7
-                        },
-                        new
-                        {
-                            CategoriesId = 1,
-                            ProductsId = 8
-                        },
-                        new
-                        {
-                            CategoriesId = 1,
-                            ProductsId = 9
-                        },
-                        new
-                        {
-                            CategoriesId = 1,
-                            ProductsId = 10
-                        },
-                        new
-                        {
-                            CategoriesId = 2,
-                            ProductsId = 6
-                        },
-                        new
-                        {
-                            CategoriesId = 2,
-                            ProductsId = 7
-                        },
-                        new
-                        {
-                            CategoriesId = 2,
-                            ProductsId = 8
-                        },
-                        new
-                        {
-                            CategoriesId = 2,
-                            ProductsId = 9
-                        },
-                        new
-                        {
-                            CategoriesId = 2,
-                            ProductsId = 10
-                        },
-                        new
-                        {
-                            CategoriesId = 2,
-                            ProductsId = 11
-                        },
-                        new
-                        {
-                            CategoriesId = 2,
-                            ProductsId = 12
-                        },
-                        new
-                        {
-                            CategoriesId = 2,
-                            ProductsId = 13
-                        },
-                        new
-                        {
-                            CategoriesId = 2,
-                            ProductsId = 14
-                        },
-                        new
-                        {
-                            CategoriesId = 2,
-                            ProductsId = 15
-                        },
-                        new
-                        {
-                            CategoriesId = 3,
-                            ProductsId = 11
-                        },
-                        new
-                        {
-                            CategoriesId = 3,
-                            ProductsId = 12
-                        },
-                        new
-                        {
-                            CategoriesId = 3,
-                            ProductsId = 13
-                        },
-                        new
-                        {
-                            CategoriesId = 3,
-                            ProductsId = 14
-                        },
-                        new
-                        {
-                            CategoriesId = 3,
-                            ProductsId = 15
-                        },
-                        new
-                        {
-                            CategoriesId = 3,
-                            ProductsId = 16
-                        },
-                        new
-                        {
-                            CategoriesId = 3,
-                            ProductsId = 17
-                        },
-                        new
-                        {
-                            CategoriesId = 3,
-                            ProductsId = 18
-                        },
-                        new
-                        {
-                            CategoriesId = 3,
-                            ProductsId = 19
-                        },
-                        new
-                        {
-                            CategoriesId = 3,
-                            ProductsId = 20
                         });
                 });
 

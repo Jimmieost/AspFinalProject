@@ -1,0 +1,142 @@
+[
+  {
+    "Id": 1,
+    "Name": "Pearl Export EXX",
+    "Price": "799",
+    "Description": "The Pearl Export EXX is a popular drumkit among beginner and intermediate drummers. It features high-quality hardware and comes in a variety of finishes.",
+    "Image": "1.png"
+  },
+  {
+    "Id": 2,
+    "Name": "Ludwig Classic Maple",
+    "Price": "2699",
+    "Description": "The Ludwig Classic Maple is a professional-grade drumkit that has been used by many famous drummers. It is known for its warm tone and great projection.",
+    "Image": "2.png"
+  },
+  {
+    "Id": 3,
+    "Name": "DW Design Series",
+    "Price": "1899",
+    "Description": "The DW Design Series is a versatile drumkit that is suitable for a wide range of musical styles. It features a low-mass tom suspension system for enhanced resonance.",
+    "Image": "3.png"
+  },
+  {
+    "Id": 4,
+    "Name": "Gretsch Catalina Club",
+    "Price": "799",
+    "Description": "The Gretsch Catalina Club is a compact drumkit that is ideal for smaller venues and practice spaces. It features a vintage-style design and comes in several colors.",
+    "Image": "4.png"
+  },
+  {
+    "Id": 5,
+    "Name": "Mapex Saturn V",
+    "Price": "1999",
+    "Description": "The Mapex Saturn V is a high-end drumkit that offers excellent sound quality and durability. It features hybrid shells made from maple and walnut.",
+    "Image": "5.png"
+  },
+  {
+    "Id": 6,
+    "Name": "PDP Concept Maple",
+    "Price": "999",
+    "Description": "The PDP Concept Maple is a versatile drumkit that is suitable for a wide range of musical styles. It features a maple shell and comes in several finishes.",
+    "Image": "6.png"
+  },
+  {
+    "Id": 7,
+    "Name": "Tama Imperialstar",
+    "Price": "799",
+    "Description": "The Tama Imperialstar is a popular drumkit among beginner and intermediate drummers. It features a 100% poplar shell and comes in several finishes.",
+    "Image": "7.png"
+  },
+  {
+    "Id": 8,
+    "Name": "Sonor AQ2",
+    "Price": "1299",
+    "Description": "The Sonor AQ2 is a mid-range drumkit that offers excellent sound quality and versatility. It features a maple shell and comes in several finishes.",
+    "Image": "8.png"
+  },
+  {
+    "Id": 9,
+    "Name": "Yamaha Stage Custom",
+    "Price": "699",
+    "Description": "The Yamaha Stage Custom is a reliable and affordable drumkit that is suitable for beginner and intermediate drummers. It features a birch shell and comes in several finishes.",
+    "Image": "9.png"
+  },
+  {
+    "Id": 10,
+    "Name": "Pearl Popstar",
+    "Price": "699",
+    "Description": "The Pearl Popstar is a reliable and affordable drumkit that is suitable for beginner and intermediate drummers. It features a birch shell and comes in several finishes.",
+    "Image": "10.png"
+  },
+  {
+    "Id": 11,
+    "Name": "Yamaha Legend",
+    "Price": "699",
+    "Description": "The Yamaha Legend is a reliable and affordable drumkit that is suitable for beginner and intermediate drummers. It features a birch shell and comes in several finishes.",
+    "Image": "11.png"
+  },
+  {
+    "Id": 12,
+    "Name": "Gretch California",
+    "Price": "699",
+    "Description": "The Gretch California is a reliable and affordable drumkit that is suitable for beginner and intermediate drummers. It features a birch shell and comes in several finishes.",
+    "Image": "12.png"
+  },
+  {
+    "Id": 13,
+    "Name": "Mapex SXX",
+    "Price": "699",
+    "Description": "The Mapex SXX is a reliable and affordable drumkit that is suitable for beginner and intermediate drummers. It features a birch shell and comes in several finishes.",
+    "Image": "13.png"
+  },
+  {
+    "Id": 14,
+    "Name": "Gretch Fall Out",
+    "Price": "699",
+    "Description": "The Yamaha Stage Custom is a reliable and affordable drumkit that is suitable for beginner and intermediate drummers. It features a birch shell and comes in several finishes.",
+    "Image": "14.png"
+  },
+  {
+    "Id": 15,
+    "Name": "Premier Beatles Signature",
+    "Price": "699",
+    "Description": "The Premier Beatles Signature is a reliable and affordable drumkit that is suitable for beginner and intermediate drummers. It features a birch shell and comes in several finishes.",
+    "Image": "15.png"
+  },
+  {
+    "Id": 16,
+    "Name": "Pearl Olympic",
+    "Price": "699",
+    "Description": "The Pearl Olympic is a reliable and affordable drumkit that is suitable for beginner and intermediate drummers. It features a birch shell and comes in several finishes.",
+    "Image": "16.png"
+  },
+  {
+    "Id": 17,
+    "Name": "Tama Ulrich Signature",
+    "Price": "699",
+    "Description": "The Tama Ulrich Signature is a reliable and affordable drumkit that is suitable for beginner and intermediate drummers. It features a birch shell and comes in several finishes.",
+    "Image": "17.png"
+  },
+  {
+    "Id": 18,
+    "Name": "Gretch Solar",
+    "Price": "699",
+    "Description": "Gretch Solar is a reliable and affordable drumkit that is suitable for beginner and intermediate drummers. It features a birch shell and comes in several finishes.",
+    "Image": "18.png"
+  },
+  {
+    "Id": 19,
+    "Name": "Yamaha DKV ",
+    "Price": "999",
+    "Description": "The Yamaha DKV is a reliable and affordable drumkit that is suitable for beginner and intermediate drummers. It features a birch shell and comes in several finishes.",
+    "Image": "19.png"
+  },
+  {
+    "Id": 20,
+    "Name": "Yamaha DTX",
+    "Price": "599",
+    "Description": "The Yamaha DTX is a reliable and affordable drumkit that is suitable for beginner and intermediate drummers. It features a birch shell and comes in several finishes.",
+    "Image": "20.png"
+  }
+]

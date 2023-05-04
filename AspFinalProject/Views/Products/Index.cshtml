@@ -1,3 +1,11 @@
-﻿@{
+﻿@using AspFinalProject.Models.Entities;
+@model List<ProductEntity>
+
+@{
     ViewData["Title"] = "Products";
+}
+
+@foreach (var product in Model)
+{
+    <partial name="/Views/Partials/_Product.cshtml" model="product" />
 }
