@@ -5,7 +5,9 @@
     ViewData["Title"] = "Products";
 }
 
+<div class="product-container">
 @foreach (var product in Model)
 {
     <partial name="/Views/Partials/_Product.cshtml" model="product" />
 }
+</div>
