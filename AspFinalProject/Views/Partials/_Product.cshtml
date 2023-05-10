@@ -1,10 +1,10 @@
-﻿@using AspFinalProject.Models.Entities;
-@model ProductEntity
-
+﻿@using AspFinalProject.Models.ViewModels;
+@model ProductViewModel
 
     <div class="product">
     <img src="images/placeholders/@Model.Image" alt="@Model.Name" />
     <h3>@Model.Name</h3>
-    <p>@Model.Description</p>
+    <!--<p>@Model.Description</p>-->
     <span>@Model.Price</span>
+    <span>@String.Join(",", Model.Categories.Select(x => x.Name))</span>
     </div>

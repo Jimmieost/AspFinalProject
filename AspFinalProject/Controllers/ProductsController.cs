@@ -1,32 +1,32 @@
 ﻿using AspFinalProject.Models.Contexts;
-using AspFinalProject.Models.Entities;
+using AspFinalProject.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace AspFinalProject.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly ProductRepository productRepository;
 
-        public ProductsController(AppDbContext context)
+        public ProductsController(ProductRepository productRepository)
         {
-            _context = context;
+            this.productRepository = productRepository;
         }
 
         public async Task<IActionResult> Index()
         {
-            List<ProductEntity> products = await _context.Products.ToListAsync();
+            var products = await productRepository.GetAllProducts();
 
-            // Skapa viewmodel istället för entity??
+            
 
             return View(products);
         }
 
 
-        public IActionResult Details(string id)
+        public async Task<IActionResult> Details(int id)
         {
-            return View();
+            var product = await productRepository.GetProductById(id);
+            return View(product);
         }
     }
 }

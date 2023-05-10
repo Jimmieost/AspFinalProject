@@ -1,4 +1,5 @@
-﻿using AspFinalProject.Models.ViewModels;
+﻿using AspFinalProject.Services;
+using AspFinalProject.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspFinalProject.Controllers
@@ -6,6 +7,13 @@ namespace AspFinalProject.Controllers
     
     public class AccountController : Controller
     {
+        private readonly AuthenticationService _auth;
+
+        public AccountController(AuthenticationService auth)
+        {
+            _auth = auth;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -17,9 +25,20 @@ namespace AspFinalProject.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(AccountRegisterViewModel viewModel)
+        public async Task<IActionResult> Register(AccountRegisterViewModel viewModel)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                if (await _auth.UserAldredyExistsAsync(viewModel))
+                    ModelState.AddModelError("", "This email does already exist.");
+
+                if (await _auth.RegisterUserAsync(viewModel))
+                    return RedirectToAction("index", "login");
+
+
+            }
+
+            return View(viewModel);
         }
 
         public IActionResult Login()
@@ -29,6 +48,7 @@ namespace AspFinalProject.Controllers
 
         [HttpPost]
         public IActionResult Login(AccountLoginViewModel viewModel)
+        
         {
             return View();
         }

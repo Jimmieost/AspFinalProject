@@ -1,14 +1,21 @@
 using Microsoft.EntityFrameworkCore;
 using AspFinalProject.Models.Contexts;
-using Microsoft.EntityFrameworkCore.Query.Internal;
 using Microsoft.AspNetCore.Identity;
 using AspFinalProject.Models.Entities;
+using AspFinalProject.Repositories;
+using AspFinalProject.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlLocalDb")));
+
+// Dependency Injection
+builder.Services.AddTransient<ProductRepository>();
+
+//Services
+builder.Services.AddScoped<AuthenticationService>();
 
 // Add and configure Identity
 builder.Services.AddIdentity<AccountEntity, IdentityRole>(x =>
