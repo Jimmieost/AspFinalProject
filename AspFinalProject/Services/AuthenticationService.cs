@@ -1,15 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
-using AspFinalProject.Models.Entities;
+﻿using AspFinalProject.Models.Entities;
 using AspFinalProject.Models.ViewModels;
 using Microsoft.AspNetCore.Identity;
-using System.Reflection.Metadata.Ecma335;
+using Microsoft.EntityFrameworkCore;
 
 namespace AspFinalProject.Services
 {
     public class AuthenticationService
     {
 
-        private readonly UserManager <AccountEntity> _userManager;
+        private readonly UserManager<AccountEntity> _userManager;
 
         public AuthenticationService(UserManager<AccountEntity> userManager)
         {
@@ -20,23 +19,50 @@ namespace AspFinalProject.Services
         {
             return await _userManager.Users.AnyAsync(x => x.Email == viewModel.Email);
         }
-        
 
         public async Task<bool> RegisterUserAsync(AccountRegisterViewModel viewModel)
         {
+            try
+            {
+                var accountEntity = new AccountEntity
+                {
+                    UserName = viewModel.Email,
+                    Email = viewModel.Email,
+                    FirstName = viewModel.FirstName,
+                    LastName = viewModel.LastName
+                };
 
-           AccountEntity accountEntity = viewModel;
+                var isFirstUser = !_userManager.Users.Any();
+                var result = await _userManager.CreateAsync(accountEntity, viewModel.Password);
 
-            var result = await _userManager.CreateAsync(accountEntity, viewModel.Password);
-            return result.Succeeded;
+                if (result.Succeeded)
+                {
+                    if (isFirstUser)
+                    {
+                        await _userManager.AddToRoleAsync(accountEntity, "admin");
+                    }
+                    else
+                    {
+                        await _userManager.AddToRoleAsync(accountEntity, "customer");
+                    }
 
-            
-            
+                    return true;
+                }
+                else
+                {
+                    // Fel uppstod vid skapandet av användaren
+                    // Du kan undersöka result.Errors för att få mer information om felet
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
-            
 
 
-
-        
     }
+
 }
+

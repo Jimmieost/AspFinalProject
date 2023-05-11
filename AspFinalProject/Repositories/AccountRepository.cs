@@ -1,5 +1,4 @@
 ﻿using AspFinalProject.Models.Contexts;
-using AspFinalProject.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -15,6 +14,7 @@ namespace AspFinalProject.Repositories
         }
 
         //Skapa en användare
+
         public virtual async Task<TEntity> AddAsync(TEntity entity)
         {
             _context.Set<TEntity>().Add(entity);
@@ -22,10 +22,11 @@ namespace AspFinalProject.Repositories
             return entity;
         }
 
-        //Hämta en användare
+
+        // Hämta en användare
         public virtual async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression)
         {
-            var entity =await _context.Set<TEntity>().FirstOrDefaultAsync(expression);
+            var entity = await _context.Set<TEntity>().FirstOrDefaultAsync(expression);
             if (entity != null)
                 return entity;
 
@@ -36,7 +37,7 @@ namespace AspFinalProject.Repositories
         public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return await _context.Set<TEntity>().ToListAsync();
-           
+
         }
 
         public virtual async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression)

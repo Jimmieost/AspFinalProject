@@ -4,7 +4,7 @@
 <div class="container mt-5">
     <div class="d-flex justify-content-center">
 
-        <form method="post" class="col-10 col-xl-6">
+        <form method="post" asp-action="Register" class="col-10 col-xl-6">
 
             <div asp-validation-summary="ModelOnly"></div>
             
@@ -40,7 +40,7 @@
             </div>
             <div class="mt-5">
                 <div class="d-grid">
-                    <button class="btn btn-success">Register</button>
+                    <button type="submit" class="btn btn-success">Register</button>
                 </div>
             </div>
         </form>
