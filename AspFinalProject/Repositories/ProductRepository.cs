@@ -35,7 +35,8 @@ namespace AspFinalProject.Repositories
         {
             var productEntity = await dbContext
                 .Products
-                .SingleAsync(x => x.Id == id);
+                .Include(x => x.Categories)
+                .FirstOrDefaultAsync(x => x.Id == id);
 
             return MapToViewModel(productEntity);
         }

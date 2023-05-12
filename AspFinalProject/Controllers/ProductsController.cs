@@ -22,7 +22,7 @@ namespace AspFinalProject.Controllers
             return View(products);
         }
 
-
+        [HttpGet("products/{id}")]
         public async Task<IActionResult> Details(int id)
         {
             var product = await productRepository.GetProductById(id);

@@ -641,6 +641,11 @@ footer .container {
   background-color: #FAEFEF;
   padding: 40px 20px;
 }
+.up-to-sell .collection-title {
+  text-align: center;
+  padding-inline: 1rem;
+  color: #292929;
+}
 .up-to-sell .collection-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);

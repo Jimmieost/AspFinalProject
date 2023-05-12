@@ -39,8 +39,8 @@ namespace AspFinalProject.Models.Contexts
 
             // Seed Roles
             builder.Entity<IdentityRole>().HasData(
-                new IdentityRole { Name = "admin", NormalizedName = "ADMIN" },
-                new IdentityRole { Name = "customer", NormalizedName = "CUSTOMER" }
+                new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "admin", NormalizedName = "ADMIN" },
+                new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "customer", NormalizedName = "CUSTOMER" }
             );
 
             // Seed Categories
