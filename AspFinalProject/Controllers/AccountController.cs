@@ -33,7 +33,7 @@ namespace AspFinalProject.Controllers
                     ModelState.AddModelError("", "This email does already exist.");
 
                 if (await _auth.RegisterUserAsync(viewModel))
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Login");
 
 
             }
@@ -43,15 +43,29 @@ namespace AspFinalProject.Controllers
 
         public IActionResult Login()
         {
+            
             return View();
         }
 
         [HttpPost]
-        public IActionResult Login(AccountLoginViewModel viewModel)
-
+        public async Task<IActionResult> Login(AccountLoginViewModel viewModel)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                if (await _auth.LoginAsync(viewModel))
+                    // Inloggningen lyckades
+                    return RedirectToAction("Index", "Home");
+
+                // Inloggningen misslyckades
+                ModelState.AddModelError(string.Empty, "Ogiltiga inloggningsuppgifter");
+            }
+            
+            
+                
+                return View(viewModel);
+            
         }
+
 
         public IActionResult Logout()
         {

@@ -11,6 +11,8 @@ namespace AspFinalProject.Models.ViewModels
 
         [Display(Name = "Password")]
         [Required(ErrorMessage = "Please enter your password.")]
+        [DataType(DataType.Password)]
         public string Password { get; set; } = null!;
+
     }
 }

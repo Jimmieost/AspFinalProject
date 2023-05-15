@@ -7,7 +7,9 @@ using AspFinalProject.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
+
 builder.Services.AddControllersWithViews();
+
 
 builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlLocalDb")));
 
@@ -16,6 +18,7 @@ builder.Services.AddTransient<ProductRepository>();
 
 //Services
 builder.Services.AddScoped<AuthenticationService>();
+builder.Services.AddScoped<SignInManager<AccountEntity>>();
 
 // Add and configure Identity
 builder.Services.AddIdentity<AccountEntity, IdentityRole>(x =>
@@ -27,6 +30,8 @@ builder.Services.AddIdentity<AccountEntity, IdentityRole>(x =>
     x.Password.RequireDigit = false;
     x.Password.RequiredLength = 6;
 }).AddEntityFrameworkStores<AppDbContext>();
+
+
 
 
 

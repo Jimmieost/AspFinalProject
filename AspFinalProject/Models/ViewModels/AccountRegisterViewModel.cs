@@ -23,11 +23,14 @@ namespace AspFinalProject.Models.ViewModels
         
         [Display(Name = "Password")]
         [Required(ErrorMessage = "Please enter your password.")]
+        [DataType(DataType.Password)]
         public string Password { get; set; } = null!;
 
 
         [Display(Name = "Confirm Password")]
         [Required(ErrorMessage = "Please confirm your password.")]
+        [DataType(DataType.Password)]
+        [Compare(nameof(Password), ErrorMessage = "Passwords do not match")]
         public string PasswordConfirmed { get; set; } = null!;
 
 

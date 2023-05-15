@@ -9,10 +9,12 @@ namespace AspFinalProject.Services
     {
 
         private readonly UserManager<AccountEntity> _userManager;
+        private readonly SignInManager<AccountEntity> _signInManager;
 
-        public AuthenticationService(UserManager<AccountEntity> userManager)
+        public AuthenticationService(UserManager<AccountEntity> userManager, SignInManager<AccountEntity>signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public async Task<bool> UserAldredyExistsAsync(AccountRegisterViewModel viewModel)
@@ -59,6 +61,19 @@ namespace AspFinalProject.Services
             {
                 return false;
             }
+        }
+
+        public async Task<bool> LoginAsync(AccountLoginViewModel viewModel)
+        {
+            var accountEntity = await _signInManager.UserManager.FindByEmailAsync(viewModel.Email);
+
+            if (accountEntity != null)
+            {
+               var result = await _signInManager.PasswordSignInAsync(accountEntity, viewModel.Password, false, lockoutOnFailure: false);
+                return result.Succeeded;
+            }
+
+            return false;
         }
 
 
