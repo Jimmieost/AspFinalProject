@@ -70,7 +70,7 @@ namespace AspFinalProject.Controllers
                 if (await _auth.LoginAsync(viewModel))
                 {
                     if (User.IsInRole("admin"))
-                        return RedirectToAction("Users", "Admin"); // Omdirigera till adminsidan
+                        return RedirectToAction("Index", "Admin"); // Omdirigera till adminsidan
 
                     else
                         return RedirectToAction("Index", "Account"); // Omdirigera till profilsidan för vanlig användare

@@ -3,6 +3,7 @@ using AspFinalProject.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 
 namespace AspFinalProject.Controllers
@@ -19,19 +20,29 @@ namespace AspFinalProject.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Index()
+      
+
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var users = await _userManager.Users.ToListAsync();
+            var userRolesViewModels = new List<UserRolesViewModel>();
+            foreach (AccountEntity user in users)
+            {
+                var thisViewModel = new UserRolesViewModel();
+                thisViewModel.UserId = user.Id;
+                thisViewModel.Email = user.Email;
+                thisViewModel.FirstName = user.FirstName;
+                thisViewModel.LastName = user.LastName;
+                thisViewModel.Roles = await GetUserRoles(user);
+                userRolesViewModels.Add(thisViewModel);
+            }
+            return View(userRolesViewModels);
+        }
+        private async Task<List<string>> GetUserRoles(AccountEntity user)
+        {
+            return new List<string>(await _userManager.GetRolesAsync(user));
         }
 
-        public IActionResult Users()
-        {
-            var users = _userManager.Users.ToList();
-            return View(users);
-        }
-
-        
-       
 
 
 
