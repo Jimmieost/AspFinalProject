@@ -8,8 +8,23 @@
         </nav>
         <nav class="menu-icons">
             <a class="link" asp-controller="products" asp-action="search"><i class="fa-solid fa-magnifying-glass"></i></a>
-            <a class="link" asp-controller="account" asp-action="login">Login</a>
-            <a class="link" asp-controller="account" asp-action="register">Register</a>
+            @if (signInManager.IsSignedIn(User))
+            {
+                
+                <a asp-action="Logout" asp-controller="Account" class="m-4"> Logout</a>
+
+                if(User.IsInRole("admin"))
+                {
+                    <a asp-action="Users" asp-controller="Admin" class="m-4"> Admin</a>
+                }
+            }
+            else
+            {
+                <a class="link" asp-controller="account" asp-action="login">Login</a>
+                <a class="link" asp-controller="account" asp-action="register">Register</a>
+            }
+
+            
             <a class="link" asp-controller="shopping" asp-action="index"><i class="fa-solid fa-cart-shopping"></i></a>
         </nav>
         <div class="toggle">

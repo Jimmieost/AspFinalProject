@@ -17,6 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(builder.Configur
 builder.Services.AddTransient<ProductRepository>();
 
 //Services
+
 builder.Services.AddScoped<AuthenticationService>();
 builder.Services.AddScoped<SignInManager<AccountEntity>>();
 

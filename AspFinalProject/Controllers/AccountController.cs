@@ -1,6 +1,10 @@
-﻿using AspFinalProject.Models.ViewModels;
+﻿using AspFinalProject.Models.Entities;
+using AspFinalProject.Models.ViewModels;
 using AspFinalProject.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace AspFinalProject.Controllers
 {
@@ -8,16 +12,26 @@ namespace AspFinalProject.Controllers
     public class AccountController : Controller
     {
         private readonly AuthenticationService _auth;
+        private readonly UserManager<AccountEntity> _userManager;
+        private readonly SignInManager<AccountEntity> _signInManager;
 
-        public AccountController(AuthenticationService auth)
+        public AccountController(AuthenticationService auth, UserManager<AccountEntity> userManager, SignInManager<AccountEntity> signInManager)
         {
             _auth = auth;
+            _userManager = userManager;
+            _signInManager = signInManager;
+
         }
 
-        public IActionResult Index()
+        [Authorize]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var user = await _userManager.GetUserAsync(User);
+            if (user is null)
+                return View();
+            return View(new ProfileViewModel(user));
         }
+
 
         public IActionResult Register()
         {
@@ -50,26 +64,42 @@ namespace AspFinalProject.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(AccountLoginViewModel viewModel)
         {
+
             if (ModelState.IsValid)
             {
                 if (await _auth.LoginAsync(viewModel))
-                    // Inloggningen lyckades
-                    return RedirectToAction("Index", "Home");
+                {
+                    if (User.IsInRole("admin"))
+                        return RedirectToAction("Users", "Admin"); // Omdirigera till adminsidan
 
-                // Inloggningen misslyckades
-                ModelState.AddModelError(string.Empty, "Ogiltiga inloggningsuppgifter");
+                    else
+                        return RedirectToAction("Index", "Account"); // Omdirigera till profilsidan för vanlig användare
+                }
+
             }
             
             
                 
                 return View(viewModel);
-            
         }
 
 
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            return View();
+            if (_signInManager.IsSignedIn(User))
+            {
+                await _signInManager.SignOutAsync();
+            }
+            return LocalRedirect("/");
+
+            
+
         }
+
+        
+            
     }
+
+        
 }
+
