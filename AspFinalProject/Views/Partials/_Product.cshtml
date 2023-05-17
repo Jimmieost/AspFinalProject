@@ -4,5 +4,5 @@
 <a asp-controller="products" asp-action="details" asp-route-id="@Model.Id" class="product">
     <img src="images/placeholders/@Model.Image" alt="@Model.Name" />
     <h3>@Model.Name</h3>
-    <span>@Model.Price</span>
+    <span>@Model.Price.ToString()!.Remove(Model.Price.ToString()!.Length - 2) kr</span>
 </a>

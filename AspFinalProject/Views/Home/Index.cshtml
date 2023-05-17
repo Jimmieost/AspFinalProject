@@ -20,7 +20,7 @@
                 <div class="body">
                     <div class="title">@product.Name</div>
                     <div class="info">
-                        <div class="price">@product.Price</div>
+                            <div class="price">@product.Price.ToString()!.Remove(product.Price.ToString()!.Length - 2) kr</div>
                         <i class="add-cart fa-regular fa-cart-plus"></i>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                     <div class="body">
                         <div class="title">@product.Name</div>
                         <div class="info">
-                            <div class="price">@product.Price</div>
+                            <div class="price">@product.Price.ToString()!.Remove(product.Price.ToString()!.Length - 2) kr</div>
                             <i class="add-cart fa-regular fa-cart-plus"></i>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                     <div class="body">
                         <div class="title">@product.Name</div>
                         <div class="info">
-                            <div class="price">@product.Price</div>
+                            <div class="price">@product.Price.ToString()!.Remove(product.Price.ToString()!.Length - 2) kr</div>
                             <i class="add-cart fa-regular fa-cart-plus"></i>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                     <div class="body">
                         <div class="title">@product.Name</div>
                         <div class="info">
-                            <div class="price">@product.Price</div>
+                            <div class="price">@product.Price.ToString()!.Remove(product.Price.ToString()!.Length - 2) kr</div>
                             <i class="add-cart fa-regular fa-cart-plus"></i>
                         </div>
                     </div>

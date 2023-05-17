@@ -6,6 +6,6 @@
     <h2>@Model.Name</h2>
     <img src="~/images/placeholders/@Model.Image" alt="@Model.Name" />
     <p>@Model.Description</p>
-    <span>@Model.Price</span>
+    <span>@Model.Price.ToString()!.Remove(Model.Price.ToString()!.Length - 2) kr</span>
     
 </div>

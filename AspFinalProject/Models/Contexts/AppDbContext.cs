@@ -27,6 +27,7 @@ namespace AspFinalProject.Models.Contexts
         public DbSet<AccountEntity> Accounts { get; set; }
         public DbSet<ProductEntity> Products { get; set; }
         public DbSet<CategoryEntity> Categories { get; set; }
+        public DbSet<ContactEntity> Contacts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

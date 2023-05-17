@@ -13,8 +13,9 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlLocalDb")));
 
-// Dependency Injection
+// Repositories
 builder.Services.AddTransient<ProductRepository>();
+builder.Services.AddScoped<ContactRepository>();
 
 //Services
 
