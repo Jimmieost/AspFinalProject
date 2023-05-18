@@ -4,8 +4,25 @@
     ViewData["Title"] = "Profile";
 }
 
-<h1>Profile</h1>
-@Model.FirstName
+
+<h1>Account Details</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            <tr>
+                <td>@Model.FirstName</td>
+                <td>@Model.LastName</td>
+                <td>@Model.Email</td>
+            </tr>  
+    </tbody>
+</table>
 
 
 

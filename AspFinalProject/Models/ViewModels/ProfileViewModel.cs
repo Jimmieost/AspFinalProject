@@ -9,6 +9,7 @@ namespace AspFinalProject.Models.ViewModels
             FirstName = entity.FirstName;
             LastName = entity.LastName;
             Email = entity.Email;
+            
         }
 
         public string FirstName { get; set; } 
