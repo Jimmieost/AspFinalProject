@@ -1,5 +1,5 @@
 .showcase {
-    background-color: $color-theme-3;
+    background-color: $color-dark-4;
     padding: 60px 0px;
 
 
@@ -25,7 +25,7 @@
 
     .content {
         font-family: $font-poppins;
-        color: $color-dark-2;
+        color: $color-dark-1;
 
         @include lg {
             flex: 2;
@@ -39,10 +39,11 @@
         }
 
         .ingress {
-            font-size: 18px;
-            font-weight: $font-weight-regular;
+            font-size: 25px;
+            font-weight: $font-weight-bold;
             margin-bottom: 20px;
         }
+
         .title {
             font-size: 50px;
             font-weight: $font-weight-bold;

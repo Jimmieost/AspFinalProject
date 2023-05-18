@@ -12,25 +12,25 @@
             <div class="title">Exclusive Drums Red Edition.</div>
             <button class="btn-theme">SHOP NOW</button>
         </div>
-         @foreach (var product in Model.NewProducts.Take(1))
-            {
-        <div class="content-image">
+        @foreach (var product in Model.NewProducts.Take(1))
+        {
+            <div class="content-image">
                 <a href="@Url.Action("Details", "Products", new { id = product.Id })" class="collection-item">
-                <img src="~/images/placeholders/@product.Image" alt="">
-                <div class="body">
-                    <div class="title">@product.Name</div>
-                    <div class="info">
+                    <img src="~/images/placeholders/@product.Image" alt="">
+                    <div class="body">
+                        <div class="title">@product.Name</div>
+                        <div class="info">
                             <div class="price">@product.Price.ToString()!.Remove(product.Price.ToString()!.Length - 2) kr</div>
-                        <i class="add-cart fa-regular fa-cart-plus"></i>
+                            <i class="add-cart fa-regular fa-cart-plus"></i>
+                        </div>
                     </div>
-                </div>
-            </a>
-        </div>
-            }
+                </a>
+            </div>
+        }
     </div>
-    
+
 </section>
-<section class="best-collection">
+<section class="popular-collection">
     <div class="container">
         <h1 class="collection-title">Popular Drum Kits</h1>
 
@@ -54,8 +54,8 @@
 
     </div>
 </section>
-<section class="up-to-sell">
-     <div class="container">
+<section class="featured-collection">
+    <div class="container">
         <h1 class="collection-title">Featured Drum Kits</h1>
         <div class="collection-grid">
             @foreach (var product in Model.FeaturedProducts.Take(9))
@@ -77,7 +77,7 @@
     </div>
 </section>
 
-<section class="top-selling">
+<section class="new-collection">
     <div class="container-fluid">
         <h1 class="collection-title">New products this week</h1>
         <div class="collection-grid">

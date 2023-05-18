@@ -2,11 +2,52 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+
+    .product {
+        width: 25%;
+        padding: 10px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        box-sizing: border-box;
+        text-align: center;
+        text-decoration-line: none;
+        color: $color-dark-1;
+
+
+        h3 {
+            font-size: 20px;
+        }
+    }
 }
 
-.product {
-    width: 25%;
-    padding: 10px;
-    box-sizing: border-box;
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
+.image-wrapper {
+    margin-bottom: 10px; /* Justera vid behov */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5rem; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+    
+

@@ -1,12 +1,37 @@
-.top-selling {
+.popular-collection {
     padding: 40px 20px;
 
     .collection-title {
         text-align: center;
         font-family: $font-poppins;
         font-weight: $font-weight-semibold;
-        font-size: 30px;
+        font-size: 38px;
         color: $color-dark-2;
+
+        @include md {
+            font-size: 48px;
+        }
+    }
+    
+    .categories {
+        display: none;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @include lg {
+            display: flex;
+        }
+
+        .category-item {
+            margin-right: 5px;
+
+            & + li::before {
+                content: "/";
+                margin-right: 5px;
+            }
+        }
     }
 
     .collection-grid {
@@ -22,17 +47,9 @@
             grid-template-columns: repeat(3, 1fr);
         }
         @include xl {
-            grid-template-columns: repeat(7, 1fr);
+            grid-template-columns: repeat(4, 1fr);
         }
 
-        .collection-item {
-            .body {
-                .title {
-                    font-size: 14px;
-                    font-weight: $font-weight-medium;
-                }
-            }
-        }
     }
 
     .load-more {
