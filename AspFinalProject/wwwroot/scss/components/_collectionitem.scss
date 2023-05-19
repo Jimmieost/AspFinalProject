@@ -18,6 +18,7 @@
 
         .title {
             grid-area: title;
+            text-align: center;
             font-size: 18px;
             font-family: $font-poppins;
             font-weight: $font-weight-medium;
@@ -28,13 +29,13 @@
             padding: 2px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            justify-content: center;
             height: 40px;
 
             .price {
                 grid-area: price;
                 font-size: 16px;
-                align-items: center;
+                
             }
 
             .add-cart {

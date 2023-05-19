@@ -9,23 +9,21 @@
     <div class="container">
         <div class="content">
             <div class="ingress">WELCOME TO BMERKETO DRUM SHOP</div>
-            <div class="title">Exclusive Drums Red Edition.</div>
+            <div class="title">Exclusive Drums Gold Edition.</div>
             <button class="btn-theme">SHOP NOW</button>
         </div>
-        @foreach (var product in Model.NewProducts.Take(1))
-        {
-            <div class="content-image">
-                <a href="@Url.Action("Details", "Products", new { id = product.Id })" class="collection-item">
-                    <img src="~/images/placeholders/@product.Image" alt="">
-                    <div class="body">
-                        <div class="title">@product.Name</div>
-                        <div class="info">
-                            <div class="price">$@product.Price.ToString()!.Remove(product.Price.ToString()!.Length - 2)</div>
-                        </div>
+
+        <div class="content-image">
+            <a href="@Url.Action("Details", "Products", new { id = Model.Showcase.Id })" class="collection-item">
+                <img src="~/images/placeholders/@Model.Showcase.Image" alt="">
+                <div class="body">
+                    <div class="title">@Model.Showcase.Name</div>
+                    <div class="info">
+                        <div class="price">$@Model.Showcase.Price.ToString()!.Remove(Model.Showcase.Price.ToString()!.Length - 2)</div>
                     </div>
-                </a>
-            </div>
-        }
+                </div>
+            </a>
+        </div>
     </div>
 
 </section>

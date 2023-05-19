@@ -16,6 +16,9 @@ namespace AspFinalProject.Controllers
         public async Task<IActionResult> Index()
         {
             var products = await productRepository.GetAllProducts();
+
+            var showcase = await productRepository.GetProductById(20);
+
             var newProducts = products
                 .Where(x => x.Categories.Select(y => y.Name).Contains("New"))
                 .ToList();
@@ -27,9 +30,10 @@ namespace AspFinalProject.Controllers
             var popularProducts = products
                     .Where(x => x.Categories.Select(y => y.Name).Contains("Popular"))
                     .ToList();
-            
+
             var homeViewModel = new HomeViewModel
             {
+                Showcase = showcase,
                 FeaturedProducts = featuredProducts,
                 NewProducts = newProducts,
                 PopularProducts = popularProducts
