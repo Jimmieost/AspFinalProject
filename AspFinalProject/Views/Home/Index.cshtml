@@ -73,11 +73,11 @@
 </section>
 
 <section class="new-collection">
-    <div class="container-fluid">
+    <div class="container">
         <h1 class="collection-title">New products this week</h1>
         <div class="collection-grid">
 
-            @foreach (var product in Model.NewProducts.Take(7))
+            @foreach (var product in Model.NewProducts.Take(6))
             {
                 <!-- collection-item start -->
                 <a href="@Url.Action("Details", "Products", new { id = product.Id })" class="collection-item">
