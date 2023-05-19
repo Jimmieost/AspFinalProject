@@ -1,25 +1,29 @@
 ﻿@model ContactViewModel
 
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
     <div class="d-flex justify-content-center">
 
         <form method="post" asp-action="Index" asp-controller="Contacts" class="col-10 col-xl-6" novalidate>
             <div class="name form-group">
                 <label asp-for="Name" class="form-label">Name</label>
-                <input asp-for="Name" class="form-controll" />
+                <input asp-for="Name" class="form-control" />
                 <span class="error">Your name is required</span>
             </div>
             <div class="name form-group">
                 <label asp-for="Email" class="form-label">Email</label>
-                <input asp-for="Email" class="form-controll" />
+                <input asp-for="Email" class="form-control" />
                 <span class="error">Your email is required</span>
             </div>
             <div class="name form-group">
                 <label asp-for="Message" class="form-label">Message</label>
-                <textarea asp-for="Message" class="form-controll" rows="6"></textarea>
+                <textarea asp-for="Message" class="form-control" rows="6"></textarea>
                 <span asp-validation-for="Message">A message is required.</span>
             </div>
-            <button class="btn-theme">SUBMIT</button>
+            <div class="mt-5">
+                <div class="d-grid">
+                    <button class="btn btn-success">LOGIN</button>
+                </div>
+            </div>
         </form>
     </div>
 </div>

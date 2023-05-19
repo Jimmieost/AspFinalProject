@@ -1,6 +1,12 @@
 .popular-collection {
     padding: 40px 20px;
 
+    //.collection-item {
+    //    border: 1px solid black;
+    //    box-shadow: 4px 4px 4px $color-dark-4;
+    //    border-radius: 4px;
+    //}
+
     .collection-title {
         text-align: center;
         font-family: $font-poppins;
@@ -12,7 +18,7 @@
             font-size: 48px;
         }
     }
-    
+
     .categories {
         display: none;
         justify-content: center;
@@ -43,13 +49,14 @@
         @include md {
             grid-template-columns: repeat(2, 1fr);
         }
+
         @include lg {
             grid-template-columns: repeat(3, 1fr);
         }
+
         @include xl {
             grid-template-columns: repeat(4, 1fr);
         }
-
     }
 
     .load-more {

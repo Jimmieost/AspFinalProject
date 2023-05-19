@@ -10,12 +10,12 @@
             <a class="link" asp-controller="products" asp-action="search"><i class="fa-solid fa-magnifying-glass"></i></a>
             @if (signInManager.IsSignedIn(User))
             {
-                
-                <a asp-action="Logout" asp-controller="Account" class="m-4"> Logout</a>
 
-                @if(User.IsInRole("admin"))
+                <a asp-action="Logout" asp-controller="Account" class="link"> Logout</a>
+
+                @if (User.IsInRole("admin"))
                 {
-                    <a asp-action="Index" asp-controller="Admin" class="m-4"> Admin</a>
+                    <a asp-action="Index" asp-controller="Admin" class="link"> Admin</a>
                 }
             }
             else
@@ -24,8 +24,12 @@
                 <a class="link" asp-controller="account" asp-action="register">Register</a>
             }
 
-            
-            <a class="link" asp-controller="shopping" asp-action="index"><i class="fa-solid fa-cart-shopping"></i></a>
+            @if (signInManager.IsSignedIn(User))
+            {
+                <a class="link" asp-controller="account" asp-action="index"><i class="fa-solid fa-user"></i></a>
+            }
+
+
         </nav>
         <div class="toggle">
             <button class="btn-toggle btn-outline-white" data-option="toggle" data-target="#menu">

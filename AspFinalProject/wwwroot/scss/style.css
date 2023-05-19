@@ -102,6 +102,9 @@ body {
   background-color: #FFFFFF;
   text-decoration: none;
   display: block;
+  border: 1px solid black;
+  box-shadow: 4px 4px 4px #aeaeae;
+  border-radius: 4px;
 }
 .collection-item img {
   width: 100%;
@@ -270,6 +273,7 @@ header .menu-links .link {
   padding: 20px 0;
   text-decoration: none;
   font-weight: 500;
+  font-size: 16px;
 }
 header .menu-links .link:hover {
   background-color: #000000;
@@ -741,49 +745,80 @@ footer .container {
 }
 
 .product-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  padding-block: 40px;
 }
 .product-container .product {
-  width: 25%;
-  padding: 10px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   box-sizing: border-box;
   text-align: center;
   text-decoration-line: none;
   color: #000000;
 }
-.product-container .product h3 {
+.product-container .product img {
+  width: 100%;
+}
+.product-container .product-text {
+  padding: 8px;
+}
+.product-container .product-text h3 {
   font-size: 20px;
 }
 
 .product-details {
+  margin-block: 40px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  max-width: 800px;
+  margin-inline: auto;
+  border: 1px solid black;
+  box-shadow: 4px 4px 4px #aeaeae;
+  border-radius: 4px;
+  padding: 0;
+  flex-wrap: wrap;
 }
-
-.image-wrapper {
-  margin-bottom: 10px; /* Justera vid behov */
+.product-details .image-wrapper {
+  flex: 1 1 250px;
 }
-
-img {
-  max-width: 100%;
-  height: auto;
+.product-details img {
+  width: 100%;
 }
-
-h2 {
+.product-details .info-wrapper {
+  padding: 20px;
+  flex: 1 1 250px;
+  background-color: #f3f2f2;
+}
+.product-details h2 {
   font-size: 24px;
   margin-bottom: 1rem;
-  margin-top: 1rem;
 }
-
-p {
+.product-details p {
   font-size: 16px;
   line-height: 1.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.user-details {
+  margin-top: 5rem;
+  background-color: #f3f2f2;
+  border: 1px solid black;
+  box-shadow: 4px 4px 4px #aeaeae;
+  border-radius: 4px;
+}
+.user-details h1 {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.user-details {
+  margin-top: 5rem;
+  background-color: #f3f2f2;
+  border: 1px solid black;
+  box-shadow: 4px 4px 4px #aeaeae;
+  border-radius: 4px;
+}
+.user-details h1 {
+  margin-top: 1rem;
+  text-align: center;
 }
