@@ -64,4 +64,19 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
+    .add-button {
+        font-family: $font-poppins;
+        //padding: 10px 10px;
+        border: 1px solid $color-theme-1;
+        background-color: $color-theme-1;
+        color: $color-white;
+        transition: all 0.25s ease-in-out;
+
+        &:hover {
+            border: 1px solid $color-dark-2;
+            background-color: $color-dark-2;
+            color: $color-white;
+        }
+    }
 }

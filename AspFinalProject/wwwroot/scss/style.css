@@ -200,6 +200,7 @@ header {
   background-color: #f3f2f2;
   display: flex;
   padding: 0 20px;
+  position: relative;
 }
 header .container {
   display: flex;
@@ -231,20 +232,27 @@ header .logo {
 header .logo img {
   margin-right: 5px;
 }
+header .menu-links.show {
+  display: block;
+}
+@media (min-width: 992px) {
+  header .menu-links.show {
+    display: flex;
+  }
+}
 header .menu-links {
   grid-area: menulinks;
   background-color: #292929;
-  position: fixed;
+  position: absolute;
   z-index: 1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 0vw;
-  padding-top: 80px;
+  top: 80px;
+  left: 0;
+  width: 100%;
   transform: translateX(0%);
   transition: all 0.25s;
   font-size: 20px;
   overflow: hidden;
+  display: none;
 }
 @media (min-width: 992px) {
   header .menu-links {
@@ -797,6 +805,18 @@ footer .container {
   line-height: 1.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.product-details .add-button {
+  font-family: "Poppins", sans-serif;
+  border: 1px solid #ff5733;
+  background-color: #ff5733;
+  color: #FFFFFF;
+  transition: all 0.25s ease-in-out;
+}
+.product-details .add-button:hover {
+  border: 1px solid #292929;
+  background-color: #292929;
+  color: #FFFFFF;
 }
 
 .user-details {
